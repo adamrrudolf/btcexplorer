@@ -114,6 +114,45 @@ export interface Address {
     txs: Tx[]
 }
 
+// type Tx
+
+export interface Tx {
+    txid: string
+    version: number
+    locktime: number
+    vin: Vin[]
+    vout: Vout[]
+    status: Status
+    block_height: number
+    block_hash: string
+    block_time: number
+    value: number
+    value_in: number
+    fees: number
+    size: number
+    weight: number
+    fee_per_vsize: number
+    estimated_btc_sent: number
+    estimated_btc_sent_vin: number
+    estimated_btc_sent_vout: number
+    estimated_btc_sent_fee: number
+    estimated_btc_sent_change: number
+    estimated_btc_spent: number
+    estimated_btc_spent_vin: number
+    estimated_btc_spent_vout: number
+    estimated_btc_spent_fee: number
+    estimated_btc_spent_change: number
+}
+
+// type Status
+
+export interface Status {
+    confirmed: boolean
+    block_height: number
+    block_hash: string
+    block_time: number
+}   w
+
 // type ChainStats
 
 export interface ChainStats {

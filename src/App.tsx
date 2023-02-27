@@ -2,7 +2,6 @@ import { useState } from 'react'
 import BTCExplorer from './BTCExplorer'
 // setup react-query
 import { QueryClient, QueryClientProvider } from 'react-query'
-import './App.css'
 
 const queryClient = new QueryClient()
 
