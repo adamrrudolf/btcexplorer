@@ -151,7 +151,7 @@ export interface Status {
     block_height: number
     block_hash: string
     block_time: number
-}   w
+}
 
 // type ChainStats
 
