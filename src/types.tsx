@@ -15,6 +15,7 @@ export interface Transaction {
     confirmations: number;
     time: number;
     blocktime: number;
+    status : Status
 }
 
 // type Block
@@ -59,7 +60,7 @@ export interface Transaction {
     blocktime: number
     value_out: number
     size_in: number
-    fees: number
+    fee: number
 }
 
 // type Vin
@@ -67,13 +68,24 @@ export interface Transaction {
 export interface Vin {
     txid: string
     vout: number
-    scriptSig: ScriptSig
+    prevout: Prevout
+    scriptsig: string
+    scriptsig_asm: string
+    is_coinbase: boolean
     sequence: number
+    witness: string[]
     txinwitness: string[]
-    coinbase: string
+    scriptwitness: string[]
+}
+
+// type Prevout
+
+export interface Prevout {
     value: number
-    valueSat: number
-    doubleSpentTxID: null
+    scriptpubkey: string
+    scriptpubkey_asm: string
+    scriptpubkey_type: string
+    scriptpubkey_address: string
 }
 
 // type ScriptSig

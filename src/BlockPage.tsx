@@ -1,7 +1,5 @@
-// implement the BlockPage component
 import { useParams } from 'react-router-dom'
 import { useQuery } from 'react-query'
-// import { getBlock } from './api'
 import { Block } from './types'
 
 export const BlockPage = () => {

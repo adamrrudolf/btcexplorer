@@ -19,7 +19,16 @@ export const AddressPage = () => {
     return (
         <div>
             <h1>Address</h1>
-            <pre>{JSON.stringify(data, null, 2)}</pre>
+            { data && 
+            <>
+            <h2>{ data?.address }</h2>
+            <p>Number of confirmed transactions: { data?.mempool_stats.tx_count }</p>
+            <p>Total BTC received: { data.chain_stats.funded_txo_sum / 100000000 }</p>
+            <p>Total BTC spent: { data.chain_stats.spent_txo_sum / 100000000 }</p>
+            <p>Total BTC unspent: { data.chain_stats.funded_txo_sum / 100000000 - data.chain_stats.spent_txo_sum / 100000000 }</p>
+            <p>Current address balance: { data.chain_stats.funded_txo_sum / 100000000 - data.chain_stats.spent_txo_sum / 100000000 }</p>
+            </>
+            }
         </div>
     )
 }
